@@ -1,0 +1,94 @@
+$engine: 3
+$minFxVersion: 13005
+$onesync: on
+name: nagecore
+version: 1.0.0
+author: Nage Team
+description: The official recipe for Nage Core.
+
+tasks:
+  ## Prepare recipe
+  - action: download_github
+    src: https://github.com/NageTeam/txAdminRecipe
+    ref: main
+    dest: ./tmp/nage
+
+  - action: move_path
+    src: ./tmp/nage/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./tmp/nage/nagelogo.png
+    dest: ./nagelogo.png
+
+  - action: connect_database
+
+  ## Default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources/[cfx]
+
+  ## oxmysql
+  - action: download_file
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+    path: ./tmp/oxmysql.zip
+  - action: unzip
+    src: ./tmp/oxmysql.zip
+    dest: ./resources/[other]
+
+  ## nagecore
+  - action: download_file
+    url: https://github.com/NageTeam/nage_core/releases/download/nage_core/nagecore.zip
+    path: ./tmp/nagecore.zip
+  - action: unzip
+    src: ./tmp/nagecore.zip
+    dest: ./resources/[core]
+
+  - action: replace_string
+    file: ./resources/[core]/nagecore/nage.sql
+    search: "nage"
+    replace: "{{dbName}}"
+
+  - action: replace_string
+    mode: all_vars
+    file:
+      - ./resources/[core]/nagecore/nage.sql
+
+  - action: query_database
+    file: ./resources/[core]/nagecore/nage.sql
+
+  ## Nage Loadingscreen
+  - action: download_github
+    src: https://github.com/NageTeam/nage_loadingscreen
+    ref: nage
+    dest: ./resources/[core]/nage_loadingscreen
+
+  ## Nage Loadingscreen
+  - action: download_github
+    src: https://github.com/NageTeam/nage_hud
+    ref: nage
+    dest: ./resources/[core]/nage_hud
+
+  ## Nage Loadingscreen
+  - action: download_github
+    src: https://github.com/NageTeam/nage_scoreboard
+    ref: nage
+    dest: ./resources/[core]/nage_scoreboard
+
+  ## pma-voice
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: main
+    dest: ./resources/[other]/pma-voice
+
+  ## bob74_ipl
+  - action: download_github
+    src: https://github.com/Bob74/bob74_ipl
+    ref: master
+    dest: ./resources/[other]/bob74_ipl
+
+  ## Clear Temp
+  - action: remove_path
+    path: ./tmp
