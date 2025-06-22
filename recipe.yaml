@@ -65,13 +65,13 @@ tasks:
     ref: nage
     dest: ./resources/[core]/nage_loadingscreen
 
-  ## Nage Loadingscreen
+  ## Nage Hud
   - action: download_github
     src: https://github.com/NageTeam/nage_hud
     ref: nage
     dest: ./resources/[core]/nage_hud
 
-  ## Nage Loadingscreen
+  ## Nage Scoreboard
   - action: download_github
     src: https://github.com/NageTeam/nage_scoreboard
     ref: nage
