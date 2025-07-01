@@ -60,22 +60,29 @@ tasks:
     file: ./resources/[core]/nage/nage.sql
 
   ## Nage Loadingscreen
-  - action: download_github
-    src: https://github.com/NageTeam/nage_loadingscreen/releases/download/nage_loadingscreen/nage_loadingscreen.zip
-    ref: nage
+  - action: download_file
+    url: https://github.com/NageTeam/nage_loadingscreen/releases/download/nage_loadingscreen/nage_loadingscreen.zip
+    path: ./tmp/nage_loadingscreen.zip
+  - action: unzip
+    src: ./tmp/nage_loadingscreen.zip
     dest: ./resources/[core]/nage_loadingscreen
 
   ## Nage Hud
-  - action: download_github
-    src: https://github.com/NageTeam/nage_hud/releases/download/nage_hud/nage_hud.zip
-    ref: nage
+  - action: download_file
+    url: https://github.com/NageTeam/nage_hud/releases/download/nage_hud/nage_hud.zip
+    path: ./tmp/nage_hud.zip
+  - action: unzip
+    src: ./tmp/nage_hud.zip
     dest: ./resources/[core]/nage_hud
 
   ## Nage Scoreboard
-  - action: download_github
-    src: https://github.com/NageTeam/nage_scoreboard/releases/download/nage_scoreboard/nage_scoreboard.zip
-    ref: nage
+  - action: download_file
+    url: https://github.com/NageTeam/nage_scoreboard/releases/download/nage_scoreboard/nage_scoreboard.zip
+    path: ./tmp/nage_scoreboard.zip
+  - action: unzip
+    src: ./tmp/nage_scoreboard.zip
     dest: ./resources/[core]/nage_scoreboard
+
 
   ## pma-voice
   - action: download_github
