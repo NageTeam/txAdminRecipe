@@ -30,6 +30,16 @@ tasks:
     subpath: resources
     dest: ./resources/[cfx]
 
+  ## Deletes default maps
+  - action: remove_path
+    path: ./resources/[cfx]/[gamemodes]/[maps]/fivem-map-hipster
+
+  - action: remove_path
+    path: ./resources/[cfx]/[gamemodes]/[maps]/fivem-map-skater
+
+  - action: remove_path
+    path: ./resources/[cfx]/[gamemodes]/[maps]/redm-map-one
+
   ## oxmysql
   - action: download_file
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
@@ -82,7 +92,6 @@ tasks:
   - action: unzip
     src: ./tmp/nage_scoreboard.zip
     dest: ./resources/[core]/nage_scoreboard
-
 
   ## pma-voice
   - action: download_github
