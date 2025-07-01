@@ -61,19 +61,19 @@ tasks:
 
   ## Nage Loadingscreen
   - action: download_github
-    src: https://github.com/NageTeam/nage_loadingscreen
+    src: https://github.com/NageTeam/nage_loadingscreen/releases/download/nage_loadingscreen/nage_loadingscreen.zip
     ref: nage
     dest: ./resources/[core]/nage_loadingscreen
 
   ## Nage Hud
   - action: download_github
-    src: https://github.com/NageTeam/nage_hud
+    src: https://github.com/NageTeam/nage_hud/releases/download/nage_hud/nage_hud.zip
     ref: nage
     dest: ./resources/[core]/nage_hud
 
   ## Nage Scoreboard
   - action: download_github
-    src: https://github.com/NageTeam/nage_scoreboard
+    src: https://github.com/NageTeam/nage_scoreboard/releases/download/nage_scoreboard/nage_scoreboard.zip
     ref: nage
     dest: ./resources/[core]/nage_scoreboard
 
