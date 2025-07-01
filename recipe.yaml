@@ -1,7 +1,7 @@
 $engine: 3
 $minFxVersion: 13005
 $onesync: on
-name: nagecore
+name: nage
 version: 1.0.0
 author: Nage Team
 description: The official recipe for Nage Core.
