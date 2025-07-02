@@ -56,16 +56,6 @@ tasks:
     src: ./tmp/nage.zip
     dest: ./resources/[core]
 
-  - action: replace_string
-    file: ./resources/[core]/nage/nage.sql
-    search: "nage"
-    replace: "{{dbName}}"
-
-  - action: replace_string
-    mode: all_vars
-    file:
-      - ./resources/[core]/nage/nage.sql
-
   - action: query_database
     file: ./resources/[core]/nage/nage.sql
 
