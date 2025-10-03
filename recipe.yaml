@@ -50,7 +50,7 @@ tasks:
 
   ## nagecore
   - action: download_file
-    url: https://github.com/NageTeam/nage_core/releases/download/nage_core_1.0.3/nage.zip
+    url: https://github.com/NageTeam/nage_core/releases/download/nage_core_1.0.4/nage.zip
     path: ./tmp/nage.zip
   - action: unzip
     src: ./tmp/nage.zip
