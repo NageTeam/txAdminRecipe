@@ -2,7 +2,7 @@ $engine: 3
 $minFxVersion: 13005
 $onesync: on
 name: nage
-version: 1.0.4
+version: 1.0.5
 author: Nage Team
 description: The official recipe for Nage Core.
 
@@ -50,7 +50,7 @@ tasks:
 
   ## nagecore
   - action: download_file
-    url: https://github.com/NageTeam/nage_core/releases/download/nage_core_1.0.4/nage.zip
+    url: https://github.com/NageTeam/nage_core/releases/latest/download/nage.zip
     path: ./tmp/nage.zip
   - action: unzip
     src: ./tmp/nage.zip
